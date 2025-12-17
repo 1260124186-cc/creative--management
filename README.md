@@ -31,7 +31,7 @@ npm install
 npm run dev
 ```
 
-应用将在 `http://localhost:5173` 启动。
+应用将在 `http://localhost:8080` 启动（已在 `vite.config.js` 中显式指定端口）。
 
 ### 3. 生产构建
 
@@ -44,12 +44,11 @@ npm run build
 ### 4. 运行测试
 
 ```bash
-# 首先确保开发服务器正在运行
-npm run dev
-
-# 在另一个终端运行测试
+# 直接运行测试，Playwright 会按配置自动启动/复用本地开发服务器
 npm test
 ```
+
+测试将使用 `playwright.config.ts` 中配置的 `baseURL`（当前为 `http://localhost:8080`）。
 
 ## 项目结构
 
